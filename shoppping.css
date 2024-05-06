@@ -30,6 +30,14 @@ h4 {
     font-size: 20px;
     color: black;
 }
+h6 {
+    font-size: 30px;
+    color: rgb(148, 63, 7);
+    justify-content: left;
+    align-self: flex-start;
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
 
 .header {
     height: 80px;
@@ -53,131 +61,113 @@ h4 {
     font-weight: bold;
     color: white;
 }
-#home {width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    overflow:visible;
-    position: relative;
-    scroll-behavior: smooth;
-    height: 90vh;
-    width: 100%;
-    background-position: top 25% right 0;
-    background-size: cover;
-    padding: 0 80px;
-}
-.slider-frame{
+
+.slider-frame {
     overflow: hidden;
     height: 800px;
-    width: 1200px;
-    margin-left: 360px;
-    margin-top: 20px;
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 0px;
 }
 
-@-webkit-keyframes slide_animation{
-    0% {left: 0px;}
-    10% {left: 0px;}
-    20% {left:1200px;}
-    30% {left:1200px;}
-    40% {left:2400px;}
-    50% {left:2400px;}
-    60% {left:1200px;}
-    70% {left:1200px;}
-    80% {left:0px;}
-    90% {left:0px;}
-    100% {left:0px;}
+@-webkit-keyframes slide_animation {
+    0% {
+        left: 0px;
+    }
+
+    10% {
+        left: 0px;
+    }
+
+    20% {
+        left: 1200px;
+    }
+
+    30% {
+        left: 1200px;
+    }
+
+    40% {
+        left: 2400px;
+    }
+
+    50% {
+        left: 2400px;
+    }
+
+    60% {
+        left: 1200px;
+    }
+
+    70% {
+        left: 1200px;
+    }
+
+    80% {
+        left: 0px;
+    }
+
+    90% {
+        left: 0px;
+    }
+
+    100% {
+        left: 0px;
+    }
 }
-.slide-images{
+
+.slide-images {
     width: 3600px;
-    height:800px;
+    height: 800px;
     margin: 0 0 0 -2400px;
     position: relative;
-    -webkit-animation-name:slide_animation;
-    -webkit-animation-duration: 33s;
+    -webkit-animation-name: slide_animation;
+    -webkit-animation-duration: 16s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
-    -webkit-animation-play-state: running;
+    -webkit-animation-play-state:running;
 }
-.img-container{
+
+.img-container {
     height: 800px;
     width: 1200px;
     position: relative;
     float: left;
-}
-#first {
-    background-image: url("first.jpg");
-        width: 100px;
-        height: 90vh;
-        position: relative;
-        animation: moveImage 5s infinite alternate;
-        
-    background-position: top 25% right 0;
-    background-size: cover;
-    padding: 0 80px;
+    justify-content: left;
+    overflow: auto;
+    
+    text-align: center;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-     
 }
 
-#first h4 {
+.img-container h4 {
     padding-bottom: 15px;
     color: rgb(228, 213, 213);
+    position: absolute;
+    font-size: 30px;
+    margin: 20px 0px 40px 20px;
 }
+.img-container h2 {
+    line-height: 54px;
+    color: rgb(228, 213, 213);
+    position: absolute;
+    font-size: 26px;
+    margin: 60px 0px 80px 20px;}
 
-#first h1 {
+.img-container h1 {
     color: yellow;
+    position: absolute;
+    margin: 90px 0px 70px 20px;
 }
-
-#first p {
+.img-container p {
     color: rgb(228, 213, 213);
     background-color: red;
+    position: absolute;
+    font-size: 50px;
+    margin: 170px 0px 50px 20px;
 }
-#second {
-    background-image: url("second.jpg");
-    height: 90vh;
-    width: 100%;
-    background-position: top 25% right 0;
-    background-size: cover;
-    padding: 0 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-}
-#third {
-    background-image: url("third.jpg");
-    height: 90vh;
-    width: 100%;
-    background-position: top 25% right 0;
-    background-size: cover;
-    padding: 0 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-}
-#fourth {
-    background-image: url("fourth.jpg");
-    height: 90vh;
-    width: 100%;
-    background-position: top 25% right 0;
-    background-size: cover;
-    padding: 0 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-}
-#fifth {
-    background-image: url("fifth.jpg");
-    height: 90vh;
-    width: 100%;
-    background-position: top 25% right 0;
-    background-size: cover;
-    padding: 0 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-}
-.cart {
+
+.mycart {
     display: flex;
     background-color: white;
     justify-content: space-between;
@@ -192,7 +182,7 @@ h4 {
     ;
 }
 
-.cart p {
+.mycart p {
     height: 22px;
     width: 22px;
     display: flex;
@@ -200,14 +190,13 @@ h4 {
     justify-content: center;
     border-radius: 22px;
     background-color: rgb(232, 127, 14);
-    ;
     color: white;
 }
 
 .container {
     display: flex;
     width: 70%;
-    margin-bottom: 30px;
+    margin-bottom: 80px;
 }
 
 #root {
@@ -216,6 +205,7 @@ h4 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
+    
 }
 
 .sidebar {
@@ -253,9 +243,9 @@ h4 {
     align-items: center;
     justify-content: space-between;
     border: 1px solid rgb(232, 127, 14);
-    ;
     border-radius: 5px;
     padding: 15px;
+    margin-bottom: 50px;
 }
 
 .img-box {
