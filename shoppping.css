@@ -135,7 +135,6 @@ h6 {
     float: left;
     justify-content: left;
     overflow: auto;
-    
     text-align: center;
     display: flex;
 }
@@ -167,7 +166,7 @@ h6 {
     margin: 170px 0px 50px 20px;
 }
 
-.mycart {
+.cart {
     display: flex;
     background-color: white;
     justify-content: space-between;
@@ -182,7 +181,7 @@ h6 {
     ;
 }
 
-.mycart p {
+.cart p {
     height: 22px;
     width: 22px;
     display: flex;
@@ -209,13 +208,34 @@ h6 {
 }
 
 .sidebar {
-    width: 40%;
+    /*width: 40%;
     border-radius: 5px;
     background-color: #eee;
     margin-left: 20px;
     padding: 15px;
-    text-align: center;
+    text-align: center;*/
+    width: 40%;
+    position: fixed;
+    top:0;
+    /*//right: -300px;*/
+    right: 0px;
+    background-color:  #eee;
+    box-shadow: -4px 0 6px rgba(0 0, 0, 0.1);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 10px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
+.sidebar.open {
+    right: 0;
+ }
+ .sidebar-close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor:pointer;
+ }
 
 .head {
     background-color: rgb(232, 127, 14);

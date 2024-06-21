@@ -56,7 +56,7 @@ let i = 0;
 document.getElementById('root').innerHTML = categories.map((item) => {
     var { image, title, price } = item; //locally defining what will consititute the item.
     return (
-        ` <div class='box'>
+        `<div class='box'>
 <div class='img-box'>
 <img class= 'images' src= ${image}></img>
 </div>
@@ -65,47 +65,31 @@ document.getElementById('root').innerHTML = categories.map((item) => {
 <h4>Rs.${price}.00</h4>` +
         "<button onclick='addtocart(" + (i++) + ")'>Add to cart</button>" +
         `</div>
-</div> `
+</div>`
     )
 }).join('')
 
-var mycart = [];
-
-var insideCart = (`<div class="sidebar">
-<div class="head">
-    <p>My Cart</p>
-    <!--<p id="count">0</p>-->
-</div>
-
-    <div id="cartItem">Your cart is empty</div>
-    <div class="foot">
-        <h3>Total</h3>
-        <h2 id="total">$ 0.00</h2>
-    </div>
-</div>`);
+var cart = [];
 
 function addtocart(a) {
-    mycart.push({ ...categories[a] });
+    cart.push({ ...categories[a] });
     displaycart();
 }
 
 function delElement(a) {
-    mycart.splice(a, 1);
+    cart.splice(a, 1);
     displaycart();
 }
-document.getElementById("inside").innerHTML = insideCart;
-
 function displaycart(a) {
-    insideCart = insideCart;
     let j = 0;
     total = 0;
-    document.getElementById("count").innerHTML = mycart.length;
-    if (mycart.length == 0) {
+    document.getElementById("count").innerHTML = cart.length;
+    if (cart.length == 0) {
         document.getElementById('cartItem').innerHTML = "Your cart is empty";
         document.getElementById("total").innerHTML = "$" + 0 + "00";
     }
     else {
-        document.getElementById("cartItem").innerHTML = mycart.map((items) => {
+        document.getElementById("cartItem").innerHTML = cart.map((items) => {
             var { image, title, price } = items;
             total = total + price;
             document.getElementById("total").innerHTML = "$" + total + ".00";
@@ -121,10 +105,3 @@ function displaycart(a) {
         }).join('');
     }
 }
-submit.addEventListner('click', displaycart);
-
-/* Example usage: Add a product to the cart on button click
-document.querySelector('.addtocart').addEventListener('click', function() {
-  addToCart(a); // Add the product with id 0 to the cart
-});  */
-
